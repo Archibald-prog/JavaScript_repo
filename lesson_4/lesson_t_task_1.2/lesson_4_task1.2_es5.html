@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function () {
+            this.text = 'some new text';
+            console.log(this.text);
+        }
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+            console.log(this.highlighted);
+        }
+
+        const post1 = new Post('John', 'some text', '04.28.2021');
+        post1.edit();
+        const post2 = new AttachedPost('Mary', 'very long text', '04.28.2021');
+        post2.edit();
+        console.log(post2.highlighted);
+        post2.makeTextHighlighted();
+
+    </script>
+</body>
+
+</html>
