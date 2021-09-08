@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        function addNumbers(num_1, num_2) {
+            return console.log(`The addition result is ${num_1 + num_2}`);
+        }
+
+        function subtractNumbers(num_1, num_2) {
+            return console.log(`The subtraction result is ${num_1 - num_2}`);
+        }
+
+        function divideNumbers(num_1, num_2) {
+            return console.log(`The division result is ${num_1 / num_2}`);
+        }
+
+        function multiplyNumbers(num_1, num_2) {
+            return console.log(`The multiplication result is ${num_1 * num_2}`);
+        }
+
+        let num_1 = +prompt('Enter the first number');
+        let num_2 = +prompt('Enter the second number');
+        addNumbers(num_1, num_2);
+        subtractNumbers(num_1, num_2);
+        divideNumbers(num_1, num_2);
+        multiplyNumbers(num_1, num_2);
+    </script>
+</body>
+
+</html>
